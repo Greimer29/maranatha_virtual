@@ -3,8 +3,11 @@ const app = express();
 const morgan = require('morgan');
 
 //middlewares
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(express.json());
+
+//routes
+app.use(require('./routes/routes'));
 
 //settings 
 app.set('port', process.env.PORT || 3000 );
