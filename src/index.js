@@ -10,7 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //routes
-app.use('api/',require('./routes/routes'));
+app.use('/',require('./routes/routes'));
 
 //settings 
 app.set('port', process.env.PORT || 3000 );
