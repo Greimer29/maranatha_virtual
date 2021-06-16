@@ -3,6 +3,8 @@ const app = express();
 const morgan = require('morgan');
 const path = require('path');
 
+const {mongoose} = require('./database');
+
 //middlewares
 app.use(morgan('dev'));
 app.use(express.json());
