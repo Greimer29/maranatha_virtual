@@ -1,14 +1,27 @@
 {
-  "name": "maranathavirtual",
-  "version": "1.0.0",
-  "description": "Plataforma virtual para el colegio adventista maranatha ",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Greimer29",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "maranathavirtual",
+    "version": "1.0.0",
+    "description": "Plataforma virtual para el colegio adventista maranatha ",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "author": "Greimer29",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.12.14",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.14.5",
+        "@babel/preset-react": "^7.14.5",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.2.2",
+        "nodemon": "^2.0.7",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "webpack": "^5.39.0",
+        "webpack-cli": "^4.7.2"
+    }
 }
