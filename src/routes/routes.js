@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Anno = require('../models/models');
 
-router.get('/api/anno', async (req,res)=>{
+//Obtenee todos los años al hacer una búsqueda general
+router.get('/', async (req,res)=>{
     try {
         const anno = await Anno.find();
-        // console.log(ano);
         res.json(anno)
     }catch(err){
         err = new Error('Algo ha salido mal');
@@ -13,6 +13,13 @@ router.get('/api/anno', async (req,res)=>{
     }
 })
 
+//Obtener un solo año al ingresar su "id"
+router.get('/:id',async (req,res)=>{
+    const anno = await Anno.findById(req.params.id);
+    res.json(anno)
+})
+
+//Insertar años, no sé para qué querría ingresar más años.
 router.post('/api/anno', async (req,res)=>{
    try{
        const {name} = req.body;
