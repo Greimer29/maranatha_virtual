@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "dev": "nodemon src/index.js",
-        "webpack": "webpack --mode development"
+        "webpack": "webpack --mode development --watch"
     },
     "author": "Greimer29",
     "license": "ISC",
