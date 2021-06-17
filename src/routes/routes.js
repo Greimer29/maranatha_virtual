@@ -13,4 +13,18 @@ router.get('/api/anno', async (req,res)=>{
     }
 })
 
+router.post('/api/anno', async (req,res)=>{
+   try{
+       const {name} = req.body;
+       const anno = new Anno({name});
+       await anno.save();
+       res.json({
+           status:'Año guardado'
+       })
+   }catch(err){
+       err = new Error('Algo ha salido mal');
+       res.send(err);
+   }
+})
+
 module.exports = router;
