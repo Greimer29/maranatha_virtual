@@ -4,7 +4,8 @@
     "description": "Plataforma virtual para el colegio adventista maranatha ",
     "main": "src/index.js",
     "scripts": {
-        "dev": "nodemon src/index.js"
+        "dev": "nodemon src/index.js",
+        "webpack": "webpack --mode development"
     },
     "author": "Greimer29",
     "license": "ISC",
