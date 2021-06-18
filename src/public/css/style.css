@@ -1,5 +1,61 @@
 #sidebar {
-    border: 1px solid red;
-    width: 280px;
-    max-height: 100%;
+    position: fixed;
+    width: 270px;
+    /* left: -270px; */
+    height: 100%;
+    background-color: #151719;
+    transition: all 500ms linear;
+    color: white;
+    text-align: center;
+    padding: 2px;
 }
+
+#sidebar.active {
+    left: 0;
+    box-shadow: 0 0 4px #5a5a5a;
+}
+
+.container-container,
+.container-anno {
+    text-align: center;
+    padding: 2px;
+    border: 2px solid #494848;
+    max-height: 100%;
+    cursor: pointer;
+}
+
+
+/* 
+.container-container-materias {
+    display: none;
+}
+
+.container-container-matery {
+    cursor: pointer;
+    height: 20px;
+    border: 2px solid #494848;
+    height: 100%;
+}
+
+.container-container-matery:hover {
+    background-image: linear-gradient(#333333, #1a1c1d);
+    border-radius: 4px;
+}
+
+.toogle-matery::before {
+    content: "";
+    background: url("../images/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 4px;
+    top: 5px;
+    transition: all 80ms;
+}
+
+.container-container-materias.active {
+    display: block;
+    opacity: 1;
+} */
