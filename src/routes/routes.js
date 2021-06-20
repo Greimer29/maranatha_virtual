@@ -29,9 +29,20 @@ router.post('/api/anno', async (req,res)=>{
            status:'Año guardado'
        })
    }catch(err){
-       err = new Error('Algo ha salido mal');
        res.send(err);
    }
+})
+
+//Eliminar años
+router.delete('/:id', async (req,res)=>{
+    try{
+        await Anno.findByIdAndRemove(req.params.id);
+        res.json({
+            status:'Año eliminado'
+        })
+    }catch(err){
+        console.error(err);
+    }
 })
 
 module.exports = router;
