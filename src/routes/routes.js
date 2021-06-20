@@ -20,17 +20,17 @@ router.get('/:id',async (req,res)=>{
 })
 
 //Insertar años, no sé para qué querría ingresar más años.
-router.post('/api/anno', async (req,res)=>{
-   try{
+router.post('/', async (req,res)=>{
+   //try{
        const {name} = req.body;
        const anno = new Anno({name});
        await anno.save();
        res.json({
            status:'Año guardado'
        })
-   }catch(err){
-       res.send(err);
-   }
+   //}catch(err){
+       //res.send(err);
+   //}
 })
 
 //Eliminar años
