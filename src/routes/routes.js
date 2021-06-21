@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Anno = require('../models/models');
+const Materia = require('../models/materia.models');
 
 //Obtenee todos los años al hacer una búsqueda general
 router.get('/', async (req,res)=>{
@@ -21,16 +22,16 @@ router.get('/:id',async (req,res)=>{
 
 //Insertar años, no sé para qué querría ingresar más años.
 router.post('/', async (req,res)=>{
-   //try{
-       const {name} = req.body;
-       const anno = new Anno({name});
+   try{
+       const {name,materia} = req.body;
+       const anno = new Anno({name,materia});
        await anno.save();
        res.json({
            status:'Año guardado'
        })
-   //}catch(err){
-       //res.send(err);
-   //}
+   }catch(err){
+       res.send(err);
+   }
 })
 
 //Eliminar años
