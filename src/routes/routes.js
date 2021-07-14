@@ -1,8 +1,34 @@
 const express = require('express');
 const router = express.Router();
-const Anno = require('../models/models');
-const Materia = require('../models/materia.models');
+const {Anno,Materia} = require('../models/models');
 
+router.get('/materia', async (req,res)=>{
+    const materia = await Materia.find();
+    res.json(materia)
+})
+router.get('/materia/:id',async (req,res)=>{
+    const anno = await Materia.findById(req.params.id);
+    res.json(anno)
+})
+router.post('/:id/materia', async (req,res)=>{
+    const {name} = req.body;
+    const materia = new Materia({name,anno:req.params.id});
+    await materia.save( async ()=>{
+        const anno = await Anno.findById(req.params.id);
+        const materias = anno.materias;
+        materias += materia._id;
+        console.log(materias);
+    });
+    res.json(materia)
+})
+router.delete('/materia/:id', async (req,res)=>{
+    await Materia.findByIdAndRemove(req.params.id);
+    res.json({
+        status:'Materia eliminada'
+    })
+})
+
+// ---------API Annos-----------
 //Obtenee todos los años al hacer una búsqueda general
 router.get('/', async (req,res)=>{
     try {
